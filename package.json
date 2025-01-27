@@ -19,17 +19,17 @@
         "build:watch": "turbo build:watch"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.27.12",
+        "@theshop/eslint-config": "workspace:^",
+        "@theshop/prettier-config": "workspace:^",
         "prettier": "^3.2.5",
-        "turbo": "^2.3.3",
-        "typescript": "^5.2.2",
         "tsup": "^8.0.2",
-        "@myapp/eslint-config": "workspace:^",
-        "@myapp/prettier-config": "workspace:^"
+        "turbo": "^2.3.3",
+        "typescript": "^5.2.2"
     },
     "packageManager": "pnpm@9.1.3",
     "engines": {
         "node": ">=20",
         "pnpm": ">=9"
-    },
-    "dependencies": {}
+    }
 }

@@ -1,4 +1,4 @@
-import myapp from '@myapp/eslint-config'
+import myapp from '@theshop/eslint-config'
 
 export default [
     {

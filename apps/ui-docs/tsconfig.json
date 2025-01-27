@@ -1,5 +1,5 @@
 {
-    "extends": "@myapp/tsconfig/base.json",
+    "extends": "@theshop/tsconfig/base.json",
     "compilerOptions": {
         "baseUrl": ".",
         "emitDeclarationOnly": true,

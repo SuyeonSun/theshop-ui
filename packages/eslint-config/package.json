@@ -1,5 +1,5 @@
 {
-  "name": "@myapp/eslint-config",
+  "name": "@theshop/eslint-config",
   "version": "0.0.0",
   "description": "",
   "main": "./dist/cjs/index.js",

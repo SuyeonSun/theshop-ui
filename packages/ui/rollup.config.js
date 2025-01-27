@@ -1,4 +1,4 @@
-const config = require('@myapp/rollup')
+const config = require('@theshop/rollup')
 
 module.exports = config.generateRollupConfig({
     packageDir: __dirname,

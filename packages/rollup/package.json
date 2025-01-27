@@ -1,5 +1,5 @@
 {
-    "name": "@myapp/rollup",
+    "name": "@theshop/rollup",
     "version": "0.0.0",
     "main": "dist/index.js",
     "types": "./dist/index.d.ts",
@@ -38,7 +38,7 @@
         "tslib": "^2.5.0"
     },
     "devDependencies": {
-        "@myapp/tsconfig": "workspace:^",
+        "@theshop/tsconfig": "workspace:^",
         "@types/babel__core": "^7.1.14",
         "@types/node": "^20.8.6",
         "browserslist": "^4.23.0",
