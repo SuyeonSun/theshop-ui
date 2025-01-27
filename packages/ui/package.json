@@ -1,0 +1,54 @@
+{
+    "name": "@theshop/ui",
+    "version": "0.0.0",
+    "description": "",
+    "main": "./dist/cjs/index.js",
+    "module": "./dist/esm/index.mjs",
+    "license": "MIT",
+    "sideEffects": false,
+    "types": "./dist/cjs/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/esm/index.d.mts",
+                "default": "./dist/esm/index.mjs"
+            },
+            "require": {
+                "types": "./dist/cjs/index.d.ts",
+                "default": "./dist/cjs/index.js"
+            }
+        },
+        "./package.json": "./package.json",
+        "./design-system.scss": "./src/styles/design-system.scss"
+    },
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "pnpm clean && pnpm build-declarations && rollup -c",
+        "build-declarations:cjs": "tsup src/index.ts --format cjs --dts-only --out-dir ./dist/cjs --minify",
+        "build-declarations:esm": "tsup src/index.ts --format esm --dts-only --out-dir ./dist/esm --minify",
+        "build-declarations": "pnpm build-declarations:cjs && pnpm build-declarations:esm",
+        "typecheck": "tsc --noEmit"
+    },
+    "keywords": [],
+    "files": [
+        "dist"
+    ],
+    "peerDependencies": {
+        "classnames": ">=2",
+        "react": ">=17",
+        "react-dom": ">=17"
+    },
+    "devDependencies": {
+        "@myapp/rollup": "workspace:^",
+        "@myapp/tsconfig": "workspace:^",
+        "@types/react": "^18.2.28",
+        "@types/react-dom": "^18.2.13",
+        "rollup": "^4.27.4"
+    },
+    "dependencies": {
+        "clsx": "^2.1.1"
+    },
+    "engines": {
+        "node": ">= 20"
+    }
+}

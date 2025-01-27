@@ -1,0 +1,22 @@
+{
+    "name": "@myapp/prettier-config",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.json",
+    "scripts": {
+        "version": "pnpm version",
+        "deploy": "pnpm publish"
+    },
+    "peerDependencies": {
+        "prettier": "^2.8.8 || ^3.0.0"
+    },
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "<github url>",
+        "directory": "packages/prettier-config"
+    },
+    "homepage": "<github url>",
+    "keywords": [],
+    "license": "MIT"
+}

@@ -1,0 +1,16 @@
+@mixin setGlobalColors($map) {
+    @each $name, $value in $map {
+        --#{$name}: #{$value};
+    }
+}
+
+@mixin setColorClass($map) {
+    @each $name, $value in $map {
+        .color-#{$name} {
+            color: $value;
+        }
+        .bg-color-#{$name} {
+            background-color: $value;
+        }
+    }
+}

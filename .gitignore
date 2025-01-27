@@ -1,0 +1,21 @@
+# etc
+.idea
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+.env.local
+
+# turbo
+.turbo
+
+# build file
+dist

@@ -1,0 +1,35 @@
+{
+    "name": "@theshop",
+    "private": true,
+    "author": "<author>",
+    "repository": {
+        "type": "git",
+        "url": "<github url>"
+    },
+    "description": "",
+    "scripts": {
+        "build": "turbo build",
+        "prelint": "pnpm run build",
+        "lint": "eslint '**/*.{js,jsx,ts,tsx}'",
+        "lint:fix": "pnpm lint --fix",
+        "prettier": "prettier --check '**/*.{ts,tsx,js,jsx,json}'",
+        "prettier:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json}'",
+        "storybook": "turbo start --filter ui-docs",
+        "build:docs": "turbo build:docs",
+        "build:watch": "turbo build:watch"
+    },
+    "devDependencies": {
+        "prettier": "^3.2.5",
+        "turbo": "^2.3.3",
+        "typescript": "^5.2.2",
+        "tsup": "^8.0.2",
+        "@myapp/eslint-config": "workspace:^",
+        "@myapp/prettier-config": "workspace:^"
+    },
+    "packageManager": "pnpm@9.1.3",
+    "engines": {
+        "node": ">=20",
+        "pnpm": ">=9"
+    },
+    "dependencies": {}
+}
