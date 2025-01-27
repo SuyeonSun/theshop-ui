@@ -12,5 +12,8 @@
         .bg-color-#{$name} {
             background-color: $value;
         }
+        .outline-color-#{$name} {
+            border: 1px solid $value;
+        }
     }
 }

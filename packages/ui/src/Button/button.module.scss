@@ -1,6 +1,23 @@
 @forward '../styles/design-system.scss';
 
-.article {
-    padding: 5px;
-    background-color: var(--adaptiveBlue900);
+.button {
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.small {
+    padding: 4px 8px;
+    font-size: 10px;
+}
+
+.medium {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.large {
+    padding: 12px 24px;
+    font-size: 14px;
 }

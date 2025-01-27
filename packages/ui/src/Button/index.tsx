@@ -7,10 +7,31 @@ import type {Color} from '../types/colors'
 const cx = classNames.bind(styles)
 
 interface ButtonProps {
+    children?: React.ReactNode
     color?: Color
     backgroundColor?: Color
+    size?: 'small' | 'medium' | 'large'
+    outlineColor?: Color
 }
 
-export function Button({color = 'adaptiveGrey50', backgroundColor = 'adaptiveBlue500'}: ButtonProps = {}) {
-    return <button className={cx('article', `color-${color}`, `bg-color-${backgroundColor}`)}>button</button>
+export function Button({
+    children,
+    color = 'adaptiveGrey50',
+    backgroundColor = 'adaptiveBlue500',
+    outlineColor = undefined,
+    size = 'small',
+}: ButtonProps = {}) {
+    return (
+        <button
+            className={cx(
+                styles.button,
+                `color-${color}`,
+                `bg-color-${backgroundColor}`,
+                `outline-color-${outlineColor}`,
+                styles[size],
+            )}
+        >
+            {children}
+        </button>
+    )
 }
