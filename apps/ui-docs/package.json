@@ -31,7 +31,7 @@
         "storybook-addon-state": "^1.0.3",
         "style-loader": "^2.0.0",
         "tsconfig-paths-webpack-plugin": "^3.5.1",
-        "@myapp/tsconfig": "workspace:^",
-        "@myapp/ui": "workspace:^"
+        "@theshop/tsconfig": "workspace:^",
+        "@theshop/ui": "workspace:^"
     }
 }
