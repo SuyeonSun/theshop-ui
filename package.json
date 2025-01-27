@@ -16,7 +16,8 @@
         "prettier:fix": "prettier --write '**/*.{ts,tsx,js,jsx,json}'",
         "storybook": "turbo start --filter ui-docs",
         "build:docs": "turbo build:docs",
-        "build:watch": "turbo build:watch"
+        "build:watch": "turbo build:watch",
+        "release": "changeset publish"
     },
     "devDependencies": {
         "@changesets/cli": "^2.27.12",
