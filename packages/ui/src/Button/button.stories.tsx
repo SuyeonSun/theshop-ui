@@ -30,7 +30,7 @@ const meta = {
             description: '테투리 색상',
         },
         size: {
-            control: {type: 'select', options: ['small', 'medium', 'large']},
+            control: {type: 'select', options: ['sm', 'md', 'lg']},
         },
     },
 }

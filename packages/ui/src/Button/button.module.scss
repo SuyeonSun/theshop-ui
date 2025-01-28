@@ -7,17 +7,23 @@
     text-align: center;
 }
 
-.small {
-    padding: 4px 6px;
+.sm {
+    font-size: 10px;
+    padding: 2px 4px;
+    min-width: 60px;
+    height: 24px;
+}
+
+.md {
     font-size: 12px;
+    padding: 4px 8px;
+    min-width: 80px;
+    height: 32px;
 }
 
-.medium {
-    padding: 4px 6px;
+.lg {
     font-size: 14px;
-}
-
-.large {
-    padding: 4px 6px;
-    font-size: 16px;
+    padding: 6px 12px;
+    min-width: 120px;
+    height: 40px;
 }

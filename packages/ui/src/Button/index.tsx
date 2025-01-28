@@ -10,7 +10,7 @@ interface ButtonProps {
     children?: React.ReactNode
     color?: Color
     backgroundColor?: Color
-    size?: 'small' | 'medium' | 'large'
+    size?: 'sm' | 'md' | 'lg'
     outlineColor?: Color
 }
 
@@ -19,7 +19,7 @@ export function Button({
     color = 'adaptiveGrey50',
     backgroundColor = 'adaptiveBlue500',
     outlineColor = undefined,
-    size = 'small',
+    size = 'md',
 }: ButtonProps = {}) {
     return (
         <button
