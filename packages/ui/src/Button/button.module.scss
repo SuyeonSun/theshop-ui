@@ -1,6 +1,27 @@
 @forward '../styles/design-system.scss';
 
-.article {
-    padding: 5px;
-    background-color: var(--adaptiveBlue900);
+.button {
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sm {
+    font-size: 10px;
+    padding: 4px 6px;
+}
+
+.md {
+    font-size: 12px;
+    padding: 6px 8px;
+}
+
+.lg {
+    font-size: 14px;
+    padding: 8px 10px;
+}
+
+.full {
+    width: 100%;
 }
