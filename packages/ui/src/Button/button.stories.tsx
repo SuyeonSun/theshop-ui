@@ -1,7 +1,5 @@
 import {colors} from '../constants/colors'
-
 import {Button} from '.'
-
 import type {ButtonProps} from '.'
 
 const meta = {

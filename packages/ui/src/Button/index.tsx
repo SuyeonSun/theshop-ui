@@ -1,7 +1,5 @@
 import classNames from 'classnames/bind'
-
 import styles from './button.module.scss'
-
 import type {Color} from '../types/colors'
 
 const cx = classNames.bind(styles)
