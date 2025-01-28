@@ -12,6 +12,7 @@ interface ButtonProps {
     backgroundColor?: Color
     size?: 'sm' | 'md' | 'lg'
     outlineColor?: Color
+    full?: boolean
 }
 
 export function Button({
@@ -20,6 +21,7 @@ export function Button({
     backgroundColor = 'adaptiveBlue500',
     outlineColor = undefined,
     size = 'md',
+    full = false,
 }: ButtonProps = {}) {
     return (
         <button
@@ -29,6 +31,7 @@ export function Button({
                 `bg-color-${backgroundColor}`,
                 `outline-color-${outlineColor}`,
                 styles[size],
+                full ? styles.full : null,
             )}
         >
             {children}
