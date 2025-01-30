@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind'
 import styles from './button.module.scss'
 import type {Color} from '../types/colors'
+import React from 'react'
 
 const cx = classNames.bind(styles)
 
@@ -11,6 +12,7 @@ interface ButtonProps {
     size?: 'sm' | 'md' | 'lg'
     outlineColor?: Color
     full?: boolean
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export function Button({
@@ -20,6 +22,7 @@ export function Button({
     outlineColor = undefined,
     size = 'md',
     full = false,
+    onClick,
 }: ButtonProps = {}) {
     return (
         <button
@@ -31,6 +34,7 @@ export function Button({
                 styles[size],
                 full ? styles.full : null,
             )}
+            onClick={onClick}
         >
             {children}
         </button>

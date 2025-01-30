@@ -41,7 +41,16 @@ export default meta
 export const 버튼 = ({color, backgroundColor, outlineColor, size, full}: ButtonProps) => {
     return (
         <div>
-            <Button color={color} backgroundColor={backgroundColor} outlineColor={outlineColor} size={size} full={full}>
+            <Button
+                color={color}
+                backgroundColor={backgroundColor}
+                outlineColor={outlineColor}
+                size={size}
+                full={full}
+                onClick={() => {
+                    console.log('버튼 클릭')
+                }}
+            >
                 버튼
             </Button>
         </div>
