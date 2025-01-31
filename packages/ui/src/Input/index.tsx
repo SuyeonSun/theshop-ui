@@ -1,0 +1,41 @@
+import classNames from 'classnames/bind'
+import styles from './input.module.scss'
+import type {Color} from '../types/colors'
+import React from 'react'
+
+const cx = classNames.bind(styles)
+
+interface InputProps {
+    placeholder?: undefined | string
+    variant?: 'filled' | 'outline'
+    backgroundColor?: Color
+    outlineColor?: Color
+    full?: boolean
+    disabled?: boolean
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export function Input({
+    placeholder = undefined,
+    variant = 'filled',
+    backgroundColor = 'adaptiveBlue500',
+    outlineColor = undefined,
+    full = false,
+    disabled = false,
+    onChange,
+}: InputProps) {
+    return (
+        <input
+            placeholder={placeholder}
+            className={cx(
+                styles.input,
+                `bg-color-${backgroundColor}`,
+                `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
+                `${variant == 'outline' ? `outline` : null}`,
+                full ? styles.full : null,
+            )}
+            disabled={disabled}
+            onChange={onChange}
+        />
+    )
+}
