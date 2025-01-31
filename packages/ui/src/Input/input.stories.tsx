@@ -1,6 +1,7 @@
 import {colors} from '../constants/colors'
 import {Input} from '.'
 import type {InputPros} from '.'
+import {useState} from 'react'
 
 const meta = {
     title: 'base/Input',
@@ -32,17 +33,20 @@ const meta = {
         disabled: {
             control: {type: 'boolean'},
         },
-        value: {
-            control: {type: 'text'},
-        },
     },
 }
 
 export default meta
 
-export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled, value}: InputPros) => {
+export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled}: InputPros) => {
+    const [text, setText] = useState('')
+    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setText(e.target.value)
+        console.log('onChange')
+    }
     return (
         <div>
+            {text}
             <Input
                 placeholder={placeholder}
                 backgroundColor={backgroundColor}
@@ -50,8 +54,8 @@ export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, ful
                 variant={variant}
                 full={full}
                 disabled={disabled}
-                onChange={(e) => console.log(e.target.value)}
-                value={value}
+                onChange={handleOnChange}
+                value={text}
             />
         </div>
     )

@@ -26,19 +26,29 @@ export function Input({
     onChange,
     value = undefined,
 }: InputProps) {
+    const clearInput = () => {
+        if (onChange) {
+            const event = {target: {value: ''}} as React.ChangeEvent<HTMLInputElement>
+            onChange(event)
+        }
+    }
+
     return (
-        <input
-            placeholder={placeholder}
-            className={cx(
-                styles.input,
-                `bg-color-${backgroundColor}`,
-                `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
-                `${variant == 'outline' ? `outline` : null}`,
-                full ? styles.full : null,
-            )}
-            disabled={disabled}
-            onChange={onChange}
-            value={value}
-        />
+        <div>
+            <input
+                placeholder={placeholder}
+                className={cx(
+                    styles.input,
+                    `bg-color-${backgroundColor}`,
+                    `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
+                    `${variant == 'outline' ? `outline` : null}`,
+                    full ? styles.full : null,
+                )}
+                disabled={disabled}
+                onChange={onChange}
+                value={value}
+            />
+            {value && !disabled && <button onClick={clearInput}>x</button>}
+        </div>
     )
 }
