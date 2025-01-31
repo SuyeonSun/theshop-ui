@@ -12,6 +12,7 @@ interface InputProps {
     outlineColor?: Color
     full?: boolean
     disabled?: boolean
+    value?: undefined | string
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -23,6 +24,7 @@ export function Input({
     full = false,
     disabled = false,
     onChange,
+    value = undefined,
 }: InputProps) {
     return (
         <input
@@ -36,6 +38,7 @@ export function Input({
             )}
             disabled={disabled}
             onChange={onChange}
+            value={value}
         />
     )
 }

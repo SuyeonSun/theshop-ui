@@ -32,12 +32,15 @@ const meta = {
         disabled: {
             control: {type: 'boolean'},
         },
+        value: {
+            control: {type: 'text'},
+        },
     },
 }
 
 export default meta
 
-export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled}: InputPros) => {
+export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled, value}: InputPros) => {
     return (
         <div>
             <Input
@@ -48,6 +51,7 @@ export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, ful
                 full={full}
                 disabled={disabled}
                 onChange={(e) => console.log(e.target.value)}
+                value={value}
             />
         </div>
     )
