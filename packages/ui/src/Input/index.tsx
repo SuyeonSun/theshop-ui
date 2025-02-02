@@ -5,26 +5,27 @@ import React from 'react'
 
 const cx = classNames.bind(styles)
 
-interface InputProps {
-    placeholder?: undefined | string
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    placeholder?: string
     variant?: 'filled' | 'outline'
     backgroundColor?: Color
     outlineColor?: Color
     full?: boolean
     disabled?: boolean
-    value?: undefined | string
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+    value?: string
+    clearable?: boolean
 }
 
 export function Input({
-    placeholder = undefined,
+    placeholder = '',
     variant = 'filled',
     backgroundColor = 'adaptiveBlue500',
-    outlineColor = undefined,
+    outlineColor,
     full = false,
-    disabled = false,
     onChange,
-    value = undefined,
+    value = '',
+    clearable = false,
+    ...restProps
 }: InputProps) {
     const clearInput = () => {
         if (onChange) {
@@ -38,17 +39,21 @@ export function Input({
             <input
                 placeholder={placeholder}
                 className={cx(
-                    styles.input,
+                    'input',
                     `bg-color-${backgroundColor}`,
                     `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
                     `${variant == 'outline' ? `outline` : null}`,
-                    full ? styles.full : null,
+                    full && 'full',
                 )}
-                disabled={disabled}
                 onChange={onChange}
                 value={value}
+                {...restProps}
             />
-            {value && !disabled && <button onClick={clearInput}>x</button>}
+            {value && clearable && (
+                <button className={styles.closeButton} onClick={clearInput}>
+                    <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>close</span>
+                </button>
+            )}
         </div>
     )
 }

@@ -5,14 +5,13 @@ import React from 'react'
 
 const cx = classNames.bind(styles)
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode
     color?: Color
     backgroundColor?: Color
     size?: 'sm' | 'md' | 'lg'
     outlineColor?: Color
     full?: boolean
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export function Button({
@@ -22,19 +21,19 @@ export function Button({
     outlineColor = undefined,
     size = 'md',
     full = false,
-    onClick,
-}: ButtonProps = {}) {
+    ...restProps
+}: ButtonProps) {
     return (
         <button
             className={cx(
-                styles.button,
+                'button',
                 `color-${color}`,
                 `bg-color-${backgroundColor}`,
                 `outline-color-${outlineColor}`,
-                styles[size],
-                full ? styles.full : null,
+                size,
+                full && 'full',
             )}
-            onClick={onClick}
+            {...restProps}
         >
             {children}
         </button>

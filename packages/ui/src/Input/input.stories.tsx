@@ -33,12 +33,15 @@ const meta = {
         disabled: {
             control: {type: 'boolean'},
         },
+        clearable: {
+            control: {type: 'boolean'},
+        },
     },
 }
 
 export default meta
 
-export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled}: InputPros) => {
+export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled, clearable}: InputPros) => {
     const [text, setText] = useState('')
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value)
@@ -56,6 +59,7 @@ export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, ful
                 disabled={disabled}
                 onChange={handleOnChange}
                 value={text}
+                clearable={clearable}
             />
         </div>
     )
