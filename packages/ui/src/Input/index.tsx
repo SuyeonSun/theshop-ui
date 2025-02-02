@@ -50,7 +50,7 @@ export function Input({
                 {...restProps}
             />
             {value && clearable && (
-                <button className={styles.closeButton} onClick={clearInput}>
+                <button className={cx('clearable-btn')} onClick={clearInput}>
                     <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>close</span>
                 </button>
             )}
