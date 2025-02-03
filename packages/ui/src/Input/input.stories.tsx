@@ -49,7 +49,6 @@ export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, ful
     }
     return (
         <div>
-            {text}
             <Input
                 placeholder={placeholder}
                 backgroundColor={backgroundColor}

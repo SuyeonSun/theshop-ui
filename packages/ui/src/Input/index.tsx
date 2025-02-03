@@ -35,25 +35,26 @@ export function Input({
     }
 
     return (
-        <div>
-            <input
-                placeholder={placeholder}
-                className={cx(
-                    'input',
-                    `bg-color-${backgroundColor}`,
-                    `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
-                    `${variant == 'outline' ? `outline` : null}`,
-                    full && 'full',
+        <div className={cx('input-container', {full})}>
+            <div className={cx('input-wrapper')}>
+                <input
+                    placeholder={placeholder}
+                    className={cx(
+                        'input',
+                        `bg-color-${backgroundColor}`,
+                        `${variant == 'outline' ? `outline-color-${outlineColor}` : null}`,
+                        `${variant == 'outline' ? `outline` : null}`,
+                    )}
+                    onChange={onChange}
+                    value={value}
+                    {...restProps}
+                />
+                {value && clearable && (
+                    <button className={cx('clearable-btn')} onClick={clearInput}>
+                        <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>close</span>
+                    </button>
                 )}
-                onChange={onChange}
-                value={value}
-                {...restProps}
-            />
-            {value && clearable && (
-                <button className={cx('clearable-btn')} onClick={clearInput}>
-                    <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>close</span>
-                </button>
-            )}
+            </div>
         </div>
     )
 }
