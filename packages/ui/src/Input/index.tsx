@@ -35,7 +35,7 @@ export function Input({
     }
 
     return (
-        <div className={cx('input-container', {full})}>
+        <div className={cx('input-container', full && 'full')}>
             <div className={cx('input-wrapper')}>
                 <input
                     placeholder={placeholder}
