@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import styles from './input.module.scss'
 import type {Color} from '../types/colors'
-import React from 'react'
+import React, {useCallback} from 'react'
 
 const cx = classNames.bind(styles)
 
@@ -27,12 +27,12 @@ export function Input({
     clearable = false,
     ...restProps
 }: InputProps) {
-    const clearInput = () => {
+    const clearInput = useCallback(() => {
         if (onChange) {
             const event = {target: {value: ''}} as React.ChangeEvent<HTMLInputElement>
             onChange(event)
         }
-    }
+    }, [onChange])
 
     return (
         <div className={cx('input-container', full && 'full')}>
