@@ -5,7 +5,7 @@ import React, {useCallback} from 'react'
 
 const cx = classNames.bind(styles)
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     placeholder?: string
     variant?: 'filled' | 'outline'
     backgroundColor?: Color
@@ -14,6 +14,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     disabled?: boolean
     value?: string
     clearable?: boolean
+    isWithIcon?: boolean
 }
 
 export function Input({
@@ -25,6 +26,7 @@ export function Input({
     onChange,
     value = '',
     clearable = false,
+    isWithIcon = false,
     ...restProps
 }: InputProps) {
     const clearInput = useCallback(() => {
@@ -49,11 +51,14 @@ export function Input({
                     value={value}
                     {...restProps}
                 />
-                {value && clearable && (
-                    <button className={cx('clearable-btn')} onClick={clearInput}>
+                {value && clearable ? (
+                    <button
+                        className={cx(`${isWithIcon ? 'clearable-btn-with-icon' : 'clearable-btn-without-icon'}`)}
+                        onClick={clearInput}
+                    >
                         <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>close</span>
                     </button>
-                )}
+                ) : null}
             </div>
         </div>
     )
