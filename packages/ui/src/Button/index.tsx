@@ -1,12 +1,11 @@
 import classNames from 'classnames/bind'
-
 import styles from './button.module.scss'
-
 import type {Color} from '../types/colors'
+import React from 'react'
 
 const cx = classNames.bind(styles)
 
-interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode
     color?: Color
     backgroundColor?: Color
@@ -22,17 +21,19 @@ export function Button({
     outlineColor = undefined,
     size = 'md',
     full = false,
-}: ButtonProps = {}) {
+    ...restProps
+}: ButtonProps) {
     return (
         <button
-            className={cx(
-                styles.button,
-                `color-${color}`,
-                `bg-color-${backgroundColor}`,
-                `outline-color-${outlineColor}`,
-                styles[size],
-                full ? styles.full : null,
-            )}
+            className={cx({
+                button: true,
+                [`color-${color}`]: color,
+                [`bg-color-${backgroundColor}`]: backgroundColor,
+                [`outline-color-${outlineColor}`]: outlineColor,
+                [`${size}`]: true,
+                full: full,
+            })}
+            {...restProps}
         >
             {children}
         </button>

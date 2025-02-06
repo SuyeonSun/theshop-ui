@@ -1,0 +1,53 @@
+@forward '../styles/design-system.scss';
+
+.icon-input-container {
+    display: flex;
+    align-items: center;
+    width: auto;
+
+    &.full {
+        width: 100%;
+    }
+}
+
+.icon-input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: auto;
+    border-radius: 4px;
+
+    &.full {
+        width: 100%;
+    }
+}
+
+.clearable-btn {
+    position: absolute;
+    right: 24px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 20;
+    font-size: 14px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.8);
+    color: var(--adaptiveGrey200);
+}
