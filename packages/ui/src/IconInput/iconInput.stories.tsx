@@ -1,11 +1,11 @@
 import {colors} from '../constants/colors'
 import React from 'react'
-import {IconInput} from '.'
+import {IconInput, IconType} from '.'
 import type {InputProps} from '../Input'
 import {useState, useCallback} from 'react'
 
 interface IconInputProps extends InputProps {
-    icon?: string
+    icon: IconType
 }
 
 const meta = {
@@ -42,7 +42,7 @@ const meta = {
             control: {type: 'boolean'},
         },
         icon: {
-            control: {type: 'text'},
+            control: {type: 'select', options: ['search', 'cancel', 'close', 'block', 'check']},
         },
     },
 }
@@ -63,11 +63,10 @@ export const 아이콘_입력 = ({
 
     const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value)
-        console.log('onChange')
     }, [])
 
     return (
-        <div style={{width: '300px'}}>
+        <div>
             <IconInput
                 placeholder={placeholder}
                 backgroundColor={backgroundColor}

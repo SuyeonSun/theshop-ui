@@ -1,6 +1,6 @@
 import {colors} from '../constants/colors'
 import {Input} from '.'
-import type {InputPros} from '.'
+import type {InputProps} from '.'
 import {useState, useCallback} from 'react'
 
 const meta = {
@@ -41,11 +41,10 @@ const meta = {
 
 export default meta
 
-export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled, clearable}: InputPros) => {
+export const 입력 = ({placeholder, backgroundColor, outlineColor, variant, full, disabled, clearable}: InputProps) => {
     const [text, setText] = useState('')
     const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value)
-        console.log('onChange')
     }, [])
 
     return (

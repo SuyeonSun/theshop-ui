@@ -4,12 +4,12 @@ import type {Color} from '../types/colors'
 
 const cx = classNames.bind(styles)
 
-interface TextProps {
+export interface TextProps {
     children?: React.ReactNode
     color?: Color
     size?: 'title1' | 'title2' | 'title3' | 'title4' | 'body1' | 'body2' | 'body3' | 'body4'
     bold?: boolean
 }
 export function Text({children, color = 'adaptiveGrey900', size = 'body1', bold = false}: TextProps = {}) {
-    return <p className={cx(`color-${color}`, styles[size], bold ? styles.bold : null)}>{children}</p>
+    return <p className={cx(`color-${color}`, styles[size], bold ? 'bold' : null)}>{children}</p>
 }

@@ -5,7 +5,7 @@ import React from 'react'
 
 const cx = classNames.bind(styles)
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children?: React.ReactNode
     color?: Color
     backgroundColor?: Color
@@ -31,7 +31,7 @@ export function Button({
                 `bg-color-${backgroundColor}`,
                 `outline-color-${outlineColor}`,
                 size,
-                full && 'full',
+                {full: full},
             )}
             {...restProps}
         >

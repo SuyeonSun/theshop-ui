@@ -37,7 +37,7 @@ export function Input({
     }, [onChange])
 
     return (
-        <div className={cx('input-container', full && 'full')}>
+        <div className={cx('input-container', {full: full})}>
             <div className={cx('input-wrapper')}>
                 <input
                     placeholder={placeholder}
