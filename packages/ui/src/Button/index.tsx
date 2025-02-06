@@ -25,14 +25,14 @@ export function Button({
 }: ButtonProps) {
     return (
         <button
-            className={cx(
-                'button',
-                `color-${color}`,
-                `bg-color-${backgroundColor}`,
-                `outline-color-${outlineColor}`,
-                size,
-                {full: full},
-            )}
+            className={cx({
+                button: true,
+                [`color-${color}`]: color,
+                [`bg-color-${backgroundColor}`]: backgroundColor,
+                [`outline-color-${outlineColor}`]: outlineColor,
+                [`${size}`]: true,
+                full: full,
+            })}
             {...restProps}
         >
             {children}

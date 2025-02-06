@@ -13,13 +13,20 @@ export interface IconInputProps extends InputProps {
 
 export function IconInput({icon, full, ...restProps}: IconInputProps) {
     return (
-        <div className={cx('icon-input-container', {full: full})}>
-            <div className={cx('icon-input-wrapper', {full: full})}>
+        <div
+            className={cx({
+                'icon-input-container': true,
+                full: full,
+            })}
+        >
+            <div className={cx({'icon-input-wrapper': true, full: full})}>
                 <Input {...restProps} full={full} isWithIcon={true} />
 
                 {icon ? (
-                    <span className={cx('icon')}>
-                        <span className={`material-symbols-outlined ${cx('material-symbols-outlined')}`}>{icon}</span>
+                    <span className={cx({icon: true})}>
+                        <span className={`material-symbols-outlined ${cx({'material-symbols-outlined': true})}`}>
+                            {icon}
+                        </span>
                     </span>
                 ) : null}
             </div>

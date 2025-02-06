@@ -11,5 +11,15 @@ export interface TextProps {
     bold?: boolean
 }
 export function Text({children, color = 'adaptiveGrey900', size = 'body1', bold = false}: TextProps = {}) {
-    return <p className={cx(`color-${color}`, styles[size], bold ? 'bold' : null)}>{children}</p>
+    return (
+        <p
+            className={cx({
+                [`color-${color}`]: color,
+                [`${size}`]: true,
+                bold: bold,
+            })}
+        >
+            {children}
+        </p>
+    )
 }
