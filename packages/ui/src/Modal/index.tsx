@@ -16,49 +16,17 @@ function Dimmed({isShow}: DimmedProps) {
 }
 
 export interface ModalProps {
-    header?: React.ReactNode
-    contents?: React.ReactNode
-    footer?: React.ReactNode
     isShow: boolean
-    color?: Color
-    backgroundColor?: Color
-    outlineColor?: Color
+    children: React.ReactNode
 }
 
-export function Modal({header, contents, footer, isShow}: ModalProps) {
+export function Modal({isShow, children}: ModalProps) {
     if (!isShow) return null
 
     return (
         <div>
             <Dimmed isShow={isShow} />
-            <div
-                className={cx({
-                    'modal-container': true,
-                    open: isShow,
-                })}
-            >
-                <div
-                    className={cx({
-                        'modal-header': header,
-                    })}
-                >
-                    {header ? header : null}
-                </div>
-                <div
-                    className={cx({
-                        'modal-contents': contents,
-                    })}
-                >
-                    {contents ? contents : null}
-                </div>
-                <div
-                    className={cx({
-                        'modal-footer': footer,
-                    })}
-                >
-                    {footer ? footer : null}
-                </div>
-            </div>
+            <div className={cx('modal-container', {open: isShow})}>{children}</div>
         </div>
     )
 }
@@ -87,6 +55,22 @@ function Header({text, onClose}: HeaderProps) {
     )
 }
 
+interface ContentProps {
+    children: React.ReactNode
+}
+
+export function ModalContent({children}: ContentProps) {
+    return <div className={cx('modal-contents')}>{children}</div>
+}
+
+interface FooterProps {
+    children: React.ReactNode
+}
+
+export function ModalFooter({children}: FooterProps) {
+    return <div className={cx('modal-footer')}>{children}</div>
+}
+
 interface ButtonProps {
     leftButton?: {
         label: string
@@ -107,7 +91,7 @@ interface ButtonProps {
 function Buttons({leftButton, rightButton}: ButtonProps) {
     return (
         <div className={cx({'modal-buttons': true})}>
-            {leftButton && (
+            {leftButton ? (
                 <Button
                     onClick={leftButton.action}
                     full={true}
@@ -117,8 +101,8 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
                 >
                     {leftButton.label}
                 </Button>
-            )}
-            {rightButton && (
+            ) : null}
+            {rightButton ? (
                 <Button
                     onClick={rightButton.action}
                     full={true}
@@ -128,7 +112,7 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
                 >
                     {rightButton.label}
                 </Button>
-            )}
+            ) : null}
         </div>
     )
 }
@@ -150,5 +134,7 @@ function Link({label, action, color}: LinkProps) {
 }
 
 Modal.Header = Header
+Modal.Content = ModalContent
+Modal.Footer = ModalFooter
 Modal.Buttons = Buttons
 Modal.Link = Link
