@@ -133,5 +133,22 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
     )
 }
 
+interface LinkProps {
+    label: string
+    action: () => void
+    color?: Color
+}
+
+function Link({label, action, color}: LinkProps) {
+    return (
+        <div className={cx({'modal-link': true})} onClick={action}>
+            <Text bold={true} color={color} size="body3">
+                {label}
+            </Text>
+        </div>
+    )
+}
+
 Modal.Header = Header
 Modal.Buttons = Buttons
+Modal.Link = Link

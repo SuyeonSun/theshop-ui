@@ -58,12 +58,16 @@
 }
 
 .modal-footer {
-    display: flex;
-    justify-content: space-between;
 }
 
 .modal-buttons {
     display: flex;
+    justify-content: space-between;
     gap: 8px;
     width: 100%;
+}
+
+.modal-link {
+    display: flex;
+    justify-content: end;
 }
