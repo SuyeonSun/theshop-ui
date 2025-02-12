@@ -4,6 +4,7 @@ import React from 'react'
 import {Text} from '../Text'
 import {Button} from '../Button'
 import type {Color} from '../types/colors'
+import ReactDOM from 'react-dom'
 
 const cx = classNames.bind(styles)
 
@@ -23,11 +24,12 @@ export interface ModalProps {
 export function Modal({isShow, children}: ModalProps) {
     if (!isShow) return null
 
-    return (
+    return ReactDOM.createPortal(
         <div>
             <Dimmed isShow={isShow} />
             <div className={cx('modal-container', {open: isShow})}>{children}</div>
-        </div>
+        </div>,
+        document.body,
     )
 }
 
