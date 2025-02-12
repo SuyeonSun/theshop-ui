@@ -34,7 +34,7 @@ export function Modal({isShow, children}: ModalProps) {
 }
 
 interface HeaderProps {
-    text: string
+    text?: string
     onClose: () => void
 }
 
