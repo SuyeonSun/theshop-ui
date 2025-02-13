@@ -5,7 +5,7 @@ import {Text} from '../Text'
 import {Button} from '../Button'
 import type {Color} from '../types/colors'
 import ReactDOM from 'react-dom'
-import {motion} from 'framer-motion'
+import {motion, AnimatePresence} from 'framer-motion'
 
 const cx = classNames.bind(styles)
 
@@ -23,21 +23,26 @@ export interface ModalProps {
 }
 
 export function Modal({isShow, children}: ModalProps) {
-    if (!isShow) return null
-
     return ReactDOM.createPortal(
         <div>
-            <Dimmed isShow={isShow} />
-            <motion.div
-                className={cx('modal-container')}
-                initial={{opacity: 0, x: '-50%', y: '100%'}}
-                animate={{opacity: 1, x: '-50%', y: '0%'}}
-                exit={{opacity: 0, x: '-50%', y: '100%'}}
-                transition={{duration: 0.3, ease: 'easeOut'}}
-            >
-                {children}
-            </motion.div>
+            <AnimatePresence>
+                {isShow ? (
+                    <div>
+                        <Dimmed isShow={isShow} />
+                        <motion.div
+                            className={cx('modal-container')}
+                            initial={{opacity: 0, x: '-50%', y: '100%'}}
+                            animate={{opacity: 1, x: '-50%', y: '0%'}}
+                            exit={{opacity: 0, x: '-50%', y: '100%'}}
+                            transition={{duration: 0.3, ease: 'easeOut'}}
+                        >
+                            {children}
+                        </motion.div>
+                    </div>
+                ) : null}
+            </AnimatePresence>
         </div>,
+
         document.body,
     )
 }
