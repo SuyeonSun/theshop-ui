@@ -15,17 +15,12 @@
     bottom: 0;
     left: 50%;
     width: 100%;
-    max-width: 400px; /* 데스크톱에서는 최대 400px */
-    border-radius: 4px 4px 0 0;
+    max-width: 400px; /* 최대 크기 유지 */
+    border-radius: 8px 8px 0 0;
     padding: 20px;
     box-sizing: border-box;
-    transform: translateX(-50%) translateY(100%);
     z-index: 1000;
     background-color: white;
-}
-
-.open {
-    transform: translateX(-50%) translateY(0);
 }
 
 .material-symbols-outlined {

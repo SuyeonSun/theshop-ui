@@ -51,19 +51,20 @@ export const 모달 = ({color, backgroundColor, outlineColor}: any) => {
                     <Modal.Buttons
                         leftButton={{
                             label: '확인',
-                            action: () => console.log('왼쪽 버튼 클릭'),
+                            onClick: () => console.log('왼쪽 버튼 클릭'),
                             color,
                             backgroundColor,
                             outlineColor,
                         }}
                         rightButton={{
                             label: '설정으로 이동',
-                            action: () => console.log('오른쪽 버튼 클릭'),
+                            onClick: () => console.log('오른쪽 버튼 클릭'),
                             color,
                             backgroundColor,
                             outlineColor,
                         }}
                     />
+                    {/* <Modal.Link label="확인" onClick={() => {}}></Modal.Link> */}
                 </Modal.Footer>
             </Modal>
         </div>

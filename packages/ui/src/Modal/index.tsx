@@ -5,6 +5,7 @@ import {Text} from '../Text'
 import {Button} from '../Button'
 import type {Color} from '../types/colors'
 import ReactDOM from 'react-dom'
+import {motion} from 'framer-motion'
 
 const cx = classNames.bind(styles)
 
@@ -27,7 +28,15 @@ export function Modal({isShow, children}: ModalProps) {
     return ReactDOM.createPortal(
         <div>
             <Dimmed isShow={isShow} />
-            <div className={cx('modal-container', {open: isShow})}>{children}</div>
+            <motion.div
+                className={cx('modal-container')}
+                initial={{opacity: 0, x: '-50%', y: '100%'}}
+                animate={{opacity: 1, x: '-50%', y: '0%'}}
+                exit={{opacity: 0, x: '-50%', y: '100%'}}
+                transition={{duration: 0.3, ease: 'easeOut'}}
+            >
+                {children}
+            </motion.div>
         </div>,
         document.body,
     )
@@ -76,14 +85,14 @@ export function ModalFooter({children}: FooterProps) {
 interface ButtonProps {
     leftButton?: {
         label: string
-        action: () => void
+        onClick: () => void
         color?: Color
         backgroundColor?: Color
         outlineColor?: Color
     }
     rightButton?: {
         label: string
-        action: () => void
+        onClick: () => void
         color?: Color
         backgroundColor?: Color
         outlineColor?: Color
@@ -95,7 +104,7 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
         <div className={cx({'modal-buttons': true})}>
             {leftButton ? (
                 <Button
-                    onClick={leftButton.action}
+                    onClick={leftButton.onClick}
                     full={true}
                     color={leftButton.color}
                     backgroundColor={leftButton.backgroundColor}
@@ -106,7 +115,7 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
             ) : null}
             {rightButton ? (
                 <Button
-                    onClick={rightButton.action}
+                    onClick={rightButton.onClick}
                     full={true}
                     color={rightButton.color}
                     backgroundColor={rightButton.backgroundColor}
@@ -121,13 +130,13 @@ function Buttons({leftButton, rightButton}: ButtonProps) {
 
 interface LinkProps {
     label: string
-    action: () => void
+    onClick: () => void
     color?: Color
 }
 
-function Link({label, action, color}: LinkProps) {
+function Link({label, onClick, color}: LinkProps) {
     return (
-        <div className={cx({'modal-link': true})} onClick={action}>
+        <div className={cx({'modal-link': true})} onClick={onClick}>
             <Text bold={true} color={color} size="body3">
                 {label}
             </Text>
