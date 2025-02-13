@@ -31,11 +31,13 @@ jobs:
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-            - name: Enable Corepack
+            - name: Enable corepack
               run: corepack enable
 
-            - name: Install Dependencies
-              run: pnpm install
+            - name: setup pnpm and install dependencies
+              uses: pnpm/action-setup@v3
+              with:
+                  run_install: true
 
             - name: Create Release Pull Request or Publish to npm
               id: changesets
