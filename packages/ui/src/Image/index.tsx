@@ -1,3 +1,8 @@
+import classNames from 'classnames/bind'
+import styles from './image.module.scss'
+
+const cx = classNames.bind(styles)
+
 const ratio = {
     '4:1': '25%',
     '5:3': '60%',
@@ -23,8 +28,15 @@ export interface ImageProps {
 
 export function Image({src, alt, size}: ImageProps) {
     return (
-        <div style={{position: 'relative', paddingBottom: size === 'original' ? 'auto' : sizeMap[size]}}>
-            <img src={src} alt={alt || 'img'} style={{width: '100%', height: '100%', position: 'absolute'}} />
+        <div className={cx({'img-container': true, [`${size}`]: true})}>
+            <img
+                src={src}
+                alt={alt || 'img'}
+                className={cx({
+                    'img-with-ratio': size === 'original',
+                    'img-without-ratio': size !== 'original',
+                })}
+            />
         </div>
     )
 }
