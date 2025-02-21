@@ -24,13 +24,6 @@ export const 이미지 = ({size, lazy}: ImageProps) => {
     return (
         <div>
             <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
-            <Image src="https://picsum.photos/200/300" size={size} lazy={lazy} />
         </div>
     )
 }
