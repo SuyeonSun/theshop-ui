@@ -2,11 +2,7 @@ import path from 'node:path'
 
 /** @type { import('@storybook/react-webpack5').StorybookConfig } */
 const config = {
-    stories: [
-        '../stories/**/*.stories.tsx',
-        '../../../packages/**/*.mdx',
-        '../../../packages/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    ],
+    stories: ['../../../packages/**/*.mdx', '../../../packages/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
 
     addons: [
         getAbsolutePath('@storybook/addon-links'),

@@ -1,0 +1,41 @@
+@forward '../styles/design-system.scss';
+
+.mini {
+    padding-bottom: 25%;
+}
+
+.small {
+    padding-bottom: 60%;
+}
+
+.medium {
+    padding-bottom: 75%;
+}
+
+.large {
+    padding-bottom: 100%;
+}
+
+.big {
+    padding-bottom: 110%;
+}
+
+.img-container {
+    position: relative;
+
+    &.original {
+        padding-bottom: 0;
+        img {
+            position: static;
+            width: auto;
+            height: auto;
+        }
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
