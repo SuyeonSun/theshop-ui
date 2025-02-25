@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.3
+
+### Patch Changes
+
+- e28ca93: 이미지 UI 생성 및 pnpm build 명령어 추가
+
 ## 0.0.2
 
 ### Patch Changes
