@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.4
+
+### Patch Changes
+
+- 830e86d: index.tx 파일을 수정했습니다.
+
 ## 0.0.3
 
 ### Patch Changes
