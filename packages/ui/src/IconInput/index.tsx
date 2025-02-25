@@ -1,6 +1,5 @@
 import classNames from 'classnames/bind'
 import styles from './iconInput.module.scss'
-import React from 'react'
 import {Input, InputProps} from '../Input'
 
 const cx = classNames.bind(styles)
