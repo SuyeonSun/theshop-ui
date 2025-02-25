@@ -30,7 +30,7 @@ export default meta
 export const 텍스트 = ({color, size, bold}: TextProps) => {
     return (
         <Text color={color} size={size} bold={bold}>
-            텍스트
+            텍스트 테스트
         </Text>
     )
 }
