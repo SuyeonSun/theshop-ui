@@ -1,0 +1,31 @@
+@forward '../styles/design-system.scss';
+
+.grid {
+    display: grid;
+    width: 100%;
+}
+
+.gap-none {
+    gap: 0;
+}
+.gap-xs {
+    gap: 4px;
+}
+.gap-sm {
+    gap: 8px;
+}
+.gap-md {
+    gap: 16px;
+}
+.gap-lg {
+    gap: 24px;
+}
+.gap-xl {
+    gap: 32px;
+}
+
+@for $i from 1 through 100 {
+    .columns-#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+    }
+}
