@@ -9,6 +9,6 @@ export interface GridProps {
     gap?: 'none' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 }
 
-export function Grid({children, columns, gap}: GridProps) {
+export function Grid({children, columns = 3, gap = 'sm'}: GridProps) {
     return <div className={cx({grid: true, [`gap-${gap}`]: true, [`columns-${columns}`]: true})}>{children}</div>
 }
