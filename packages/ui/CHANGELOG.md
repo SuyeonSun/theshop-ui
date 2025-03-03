@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.5
+
+### Patch Changes
+
+- ca9b70a: [디자인시스템] flex, grid 기능 구현
+
 ## 0.0.4
 
 ### Patch Changes
