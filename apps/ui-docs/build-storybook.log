@@ -1,0 +1,32 @@
+
+> ui-docs@0.0.0 build-storybook /Users/sunsuyeon/Desktop/base-app/apps/ui-docs
+> storybook build "--output-dir=/var/folders/3y/0bqnct_x7q980klhlczd_nwm0000gn/T/chromatic--74349-K5OFXKfFWycc"
+
+[1m@storybook/core v8.5.0
+[22m
+info => Cleaning outputDir: [36m../../../../../../var/folders/3y/0bqnct_x7q980klhlczd_nwm0000gn/T/chromatic--74349-K5OFXKfFWycc[39m
+info => Loading presets
+info => Building manager..
+info => Manager built ([38;2;181;126;229m236 ms[39m)
+info => Building preview..
+info Addon-docs: using MDX3
+info => Using implicit CSS loaders
+info => [[38;2;241;97;140m@storybook/addon-styling-webpack[39m] Applying custom Storybook webpack configuration styling.
+info => [[38;2;241;97;140m@storybook/addon-styling-webpack[39m] Replacing Storybook's webpack rules for styles with given rules.
+info => Using default Webpack5 setup
+info Using tsconfig paths for react-docgen
+WARN No story files found for the specified pattern: [34m../../packages/**/*.mdx[39m
+WARN asset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+WARN This can impact web performance.
+WARN Assets: 
+WARN   388.ec590379.iframe.bundle.js (1.54 MiB)
+WARN   27.ee71e0da.iframe.bundle.js (968 KiB)
+WARN entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+WARN Entrypoints:
+WARN   main (1.56 MiB)
+WARN       runtime~main.6552834f.iframe.bundle.js
+WARN       388.ec590379.iframe.bundle.js
+WARN       main.814b9916.iframe.bundle.js
+WARN 
+info => Preview built ([38;2;181;126;229m22 s[39m)
+info => Output directory: /var/folders/3y/0bqnct_x7q980klhlczd_nwm0000gn/T/chromatic--74349-K5OFXKfFWycc
