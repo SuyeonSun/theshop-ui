@@ -1,13 +1,11 @@
-# Workflow name
 name: 'Chromatic Deployment'
 
 on: push
-
 jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v4
             - run: corepack enable
             - run: pnpm install
             - uses: chromaui/action@v1
