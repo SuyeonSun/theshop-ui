@@ -2,7 +2,7 @@ name: Chromatic Deployment
 
 on:
     push:
-        branches: [main, feature/22]
+        branches: [main]
 
 jobs:
     chromatic-deploy:
