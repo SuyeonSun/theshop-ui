@@ -1,10 +1,9 @@
 name: Chromatic
 
 on:
-    push
-    # push:
-    #     branches:
-    #         - main
+    push:
+        branches:
+            - main
 
 jobs:
     test:
