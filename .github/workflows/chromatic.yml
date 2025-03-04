@@ -1,15 +1,14 @@
-name: Chromatic
+name: Chromatic Deployment
 
 on:
     push:
-        branches:
-            - main
+        branches: [main, feature/22]
 
 jobs:
-    test:
+    chromatic-deploy:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout Repo
+            - name: Checkout repository
               uses: actions/checkout@v3
               with:
                   token: ${{ secrets.PAT_TOKEN }}
@@ -24,7 +23,12 @@ jobs:
             - run: corepack prepare pnpm@9.13.0 --activate
             - run: pnpm install
 
-            - uses: chromaui/action@v1
+            - name: Build Storybook
+              run: pnpm build-storybook
+              working-directory: apps/ui-docs
+
+            - name: Publish Chromatic
+              uses: chromaui/action@v1
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   token: ${{ secrets.PAT_TOKEN }}
