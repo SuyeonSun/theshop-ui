@@ -1,17 +1,29 @@
 name: Chromatic
 
 on:
-    push:
-        branches:
-            - main
+    push
+    # push:
+    #     branches:
+    #         - main
 
 jobs:
     test:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
+            - name: Checkout Repo
+              uses: actions/checkout@v3
+              with:
+                  token: ${{ secrets.PAT_TOKEN }}
+                  fetch-depth: 0
+
+            - name: Setup Node.js 20.x
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20.x
+
             - run: corepack enable
             - run: pnpm install
+
             - uses: chromaui/action@v1
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
