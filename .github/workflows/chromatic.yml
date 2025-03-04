@@ -28,3 +28,5 @@ jobs:
               with:
                   projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
                   token: ${{ secrets.PAT_TOKEN }}
+
+            - run: corepack prepare pnpm@9.13.0 --activate
