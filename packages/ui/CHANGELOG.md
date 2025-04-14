@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.8
+
+### Patch Changes
+
+- b5e52f3: scripts 수정
+
 ## 0.0.7
 
 ### Patch Changes
