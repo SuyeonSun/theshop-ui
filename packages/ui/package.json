@@ -19,7 +19,7 @@
             }
         },
         "./package.json": "./package.json",
-        "./design-system.scss": "./src/styles/design-system.scss"
+        "./design-system.scss": "./dist/styles/design-system.scss"
     },
     "scripts": {
         "clean": "rm -rf dist",
