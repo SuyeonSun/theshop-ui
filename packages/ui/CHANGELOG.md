@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.7
+
+### Patch Changes
+
+- 1fb43e5: exports 수정
+
 ## 0.0.6
 
 ### Patch Changes
