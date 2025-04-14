@@ -1,5 +1,11 @@
 # @theshop/ui
 
+## 0.0.6
+
+### Patch Changes
+
+- cef5a65: scripts 변경
+
 ## 0.0.5
 
 ### Patch Changes
