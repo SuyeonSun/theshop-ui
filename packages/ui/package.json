@@ -23,7 +23,7 @@
     },
     "scripts": {
         "clean": "rm -rf dist",
-        "copy-style": "mkdir -p dist/styles && cp src/styles/design-system.scss dist/styles/design-system.scss",
+        "copy-style": "mkdir -p dist/styles && cp -R src/styles/* dist/styles/",
         "build": "pnpm clean && pnpm build-declarations && rollup -c && pnpm copy-style",
         "build-declarations:cjs": "tsup src/index.ts --format cjs --dts-only --out-dir ./dist/cjs --minify",
         "build-declarations:esm": "tsup src/index.ts --format esm --dts-only --out-dir ./dist/esm --minify",
